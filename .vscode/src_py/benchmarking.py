@@ -5,31 +5,28 @@ import time
 class Benchmarking:
 
     def __init__(self):
+        self.mO = mo.MetodoOrdenamiento()
         print("Benchmarking instanciado")
 
-        self.metodo = mo.MetodoOrdenamiento()
-        arreglo = self.build_arreglo(10000)
+    def medir_tiempo(self, metodo, arreglo):
+        inicio = time.perf_counter()
+        metodo(arreglo)
+        fin = time.perf_counter()
+        return fin - inicio
 
-        tiempos = {}
+    def build_arreglo(self, tamano):
+        return [random.randint(0, 999999) for _ in range(tamano)]
 
-        print("Ejecutando método Burbuja...")
-        tiempos['Burbuja'] = self.medir_tiempo(lambda: self.metodo.sort_bubble(arreglo))
+    def contar_con_current_time_milles(self, tarea):
+        x = time.time()
+        tarea()
+        fin = time.time()
+        tiempo_segundos = fin - x
+        return f"Tiempo en milisegundos: {tiempo_segundos}"
 
-        print("Ejecutando método Selección...")
-        tiempos['Selección'] = self.medir_tiempo(lambda: self.metodo.sort_seleccion(arreglo))
-
-        print("\n--- Resultados ---")
-        for nombre, tiempo in tiempos.items():
-            print(f"{nombre}: {tiempo:.6f} segundos")
-
-        mejor = min(tiempos, key=tiempos.get)
-        print(f"\n✅ El mejor método fue: {mejor} con {tiempos[mejor]:.6f} segundos")
-
-    def build_arreglo(self, tamaño):
-        return [random.randint(0, 99999) for _ in range(tamaño)]
-
-    def medir_tiempo(self, funcion):
-        inicio = time.time_ns()
-        funcion()
+    def contar_con_nano_time(self, tarea):
+        x = time.time_ns()
+        tarea()
         fin = time.time_ns()
-        return (fin - inicio) / 1_000_000_000.0
+        tiempo_nano_segundos = (fin - x) / 1_000_000_000.0
+        return f"Tiempo en nanosegundos: {tiempo_nano_segundos}"
