@@ -1,37 +1,56 @@
 import benchmarking as bm
 import metodos_ordenamiento as mo
+import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
-    print("Hola Mundo")
     bench = bm.Benchmarking()
     metodos = mo.MetodoOrdenamiento()
 
-    tamanos = [5000, 10000, 20000]
+    tamanos = [600, 800, 1000, 2000]
     resultados = []
+
+    metodos_dic = {
+        "burbuja": metodos.sort_bubble,
+        "burbuja_mejorado": metodos.burbujaMejorado,
+        "seleccion": metodos.sort_seleccion,
+        "shell": metodos.sort_shell
+    }
 
     for tam in tamanos:
         print(f"\n--- Ejecutando para tamaño {tam} ---")
         arreglo_base = bench.build_arreglo(tam)
-
-        metodos_dic = {
-            "Burbuja": metodos.sort_bubble,
-            "Burbuja Mejorado": metodos.burbujaMejorado,
-            "Seleccion": metodos.sort_seleccion,
-            "Insercion": metodos.sort_insercion,
-            "Shell": metodos.sort_shell
-        }
-
-        tiempos_tamano = []
-
         for nombre, metodo in metodos_dic.items():
             print(f"Ejecutando {nombre}...")
             tiempo_resultado = bench.medir_tiempo(metodo, arreglo_base)
             resultados.append((tam, nombre, tiempo_resultado))
-            tiempos_tamano.append((nombre, tiempo_resultado))
 
-        mejor = min(tiempos_tamano, key=lambda x: x[1])
-        print(f"\n✅ El mejor método para tamaño {tam} fue: {mejor[0]} con {mejor[1]:.6f} segundos")
-
-    print("\n--- Resumen General ---")
+    tiempos_by_metodo = {nombre: [] for nombre in metodos_dic}
     for tam, nombre, tiempo in resultados:
-        print(f"Tamaño: {tam}, Método: {nombre}, Tiempo: {tiempo:.6f} segundos")
+        tiempos_by_metodo[nombre].append((tam, tiempo))
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+
+    fig.suptitle("DANIEL SÁNCHEZ – 06/05/2025 19:43:21", fontsize=14, fontweight='bold')
+
+    for nombre, datos in tiempos_by_metodo.items():
+        x = [tam for tam, _ in datos]
+        y = [tiempo for _, tiempo in datos]
+        ax1.plot(x, y, label=nombre, marker='o')
+
+    ax1.set_title("Comparación de Tiempos de Ejecución de Algoritmos de Ordenamiento")
+    ax1.set_xlabel("Tamaño del arreglo")
+    ax1.set_ylabel("Tiempo de ejecución (segundos)")
+    ax1.grid(True)
+    ax1.legend()
+
+    eje_x = [1, 2, 3, 4, 5]
+    eje_y = [2, 4, 6, 8, 10]
+    ax2.plot(eje_x, eje_y, label="Línea 1")
+    ax2.set_title("Gráfico de Ejemplo con Matplotlib")
+    ax2.set_xlabel("Eje X")
+    ax2.set_ylabel("Eje Y")
+    ax2.grid(True)
+    ax2.legend()
+
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
+    plt.show()
