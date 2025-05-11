@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     tamanos = [5000, 10000, 30000, 50000, 100000]
     resultados = []
-
+    
     metodos_dic = {
         "burbuja": metodos.sort_bubble,
         "burbuja_mejorado": metodos.burbujaMejorado,
@@ -25,6 +25,8 @@ if __name__ == "__main__":
             print(f"Ejecutando {nombre}...")
             tiempo_resultado = bench.medir_tiempo(metodo, arreglo_base)
             resultados.append((tam, nombre, tiempo_resultado))
+    for tam,nombre,tiempo in resultados:
+        print(f"Tamano: {tam}, Metodo: {nombre}, Tiempo: {tiempo:.6f} segundos")
 
     tiempos_by_metodo = {nombre: [] for nombre in metodos_dic}
     for tam, nombre, tiempo in resultados:
