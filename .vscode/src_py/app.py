@@ -1,7 +1,8 @@
 import benchmarking as bm
 import metodos_ordenamiento as mo
 import matplotlib.pyplot as plt
-
+import copy
+import datetime
 if __name__ == "__main__":
     bench = bm.Benchmarking()
     metodos = mo.MetodoOrdenamiento()
@@ -13,12 +14,13 @@ if __name__ == "__main__":
         "burbuja": metodos.sort_bubble,
         "burbuja_mejorado": metodos.burbujaMejorado,
         "seleccion": metodos.sort_seleccion,
+        "insercion": metodos.sort_insercion,
         "shell": metodos.sort_shell
     }
-
+    arreglo_base_grande = bench.build_arreglo(max(tamanos))
     for tam in tamanos:
         print(f"\n--- Ejecutando para tamaño {tam} ---")
-        arreglo_base = bench.build_arreglo(tam)
+        arreglo_base = arreglo_base_grande[:(tam)]
         for nombre, metodo in metodos_dic.items():
             print(f"Ejecutando {nombre}...")
             tiempo_resultado = bench.medir_tiempo(metodo, arreglo_base)
