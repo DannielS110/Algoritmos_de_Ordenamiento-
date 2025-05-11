@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
 
-    fig.suptitle("DANIEL SÁNCHEZ – 06/05/2025 19:43:21", fontsize=14, fontweight='bold')
+    fig.suptitle("DANIEL SÁNCHEZ, JOEY DIAZ – 06/05/2025 19:43:21", fontsize=14, fontweight='bold')
 
     for nombre, datos in tiempos_by_metodo.items():
         x = [tam for tam, _ in datos]
