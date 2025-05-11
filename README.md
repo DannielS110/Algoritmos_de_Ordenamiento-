@@ -1,4 +1,4 @@
-Algoritmos de Ordenamiento - Análisis de Complejidad
+📊 Algoritmos de Ordenamiento - Análisis de Complejidad 📊
 
 Información General
 
@@ -18,29 +18,33 @@ Asignatura: Estructura de Datos
 
 Práctica: 4.2 - Algoritmos de Ordenamiento
 
-Enlace al Repositorio del Proyecto
+----------------------------------------------------------------------------------------------
+🔗 Enlace al Repositorio del Proyecto
 
 [[Enlace a GitHub/GitLab del proyecto]
 ](https://github.com/DannielS110/Algoritmos_de_Ordenamiento-)
 
+----------------------------------------------------------------------------------------------
 
-Descripción
+📝 Descripción
 
 Este proyecto implementa y analiza diferentes algoritmos de ordenamiento para determinar su eficiencia en términos de tiempo de ejecución con diferentes tamaños de conjuntos de datos. Se evalúan los siguientes 
 
 métodos de ordenamiento:
 
-Burbuja (Bubble Sort)
+🔄 Burbuja (Bubble Sort)
 
-Burbuja Mejorado (Optimized Bubble Sort)
+🔄 Burbuja Mejorado (Optimized Bubble Sort)
 
-Selección (Selection Sort)
+🔄 Selección (Selection Sort)
 
-Inserción (Insertion Sort)
+🔄 Inserción (Insertion Sort)
 
-Shell Sort
+🔄 Shell Sort
 
-Estructura del Proyecto
+----------------------------------------------------------------------------------------------
+
+📂 Estructura del Proyecto
 
 app.py: Programa principal que ejecuta las pruebas y genera las gráficas
 
@@ -50,12 +54,16 @@ metodos_ordenamiento.py: Implementación de los algoritmos de ordenamiento
 
 graficas.py: Funciones para generar visualizaciones
 
-Resultados Obtenidos
+----------------------------------------------------------------------------------------------
+
+📊 Resultados Obtenidos
 
 ![image](https://github.com/user-attachments/assets/0f300290-95ee-4256-86fd-3092f0c871bf)
 
+----------------------------------------------------------------------------------------------
 
-Gráfica Comparativa
+
+📈 Gráfica Comparativa
 
 
 
