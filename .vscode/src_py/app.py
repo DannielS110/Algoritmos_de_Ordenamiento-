@@ -6,7 +6,7 @@ if __name__ == "__main__":
     bench = bm.Benchmarking()
     metodos = mo.MetodoOrdenamiento()
 
-    tamanos = [600, 800, 1000, 2000]
+    tamanos = [5.000, 10.000, 30.000, 50.000, 100.000]
     resultados = []
 
     metodos_dic = {
