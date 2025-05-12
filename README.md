@@ -65,7 +65,6 @@ graficas.py: Funciones para generar visualizaciones
 
 📊 Resultados Obtenidos
 
-![image](https://github.com/user-attachments/assets/0f300290-95ee-4256-86fd-3092f0c871bf)
 
 ![code (1)](https://github.com/user-attachments/assets/e80b97f0-3433-4cc2-bfd1-2522899ee248)
 
