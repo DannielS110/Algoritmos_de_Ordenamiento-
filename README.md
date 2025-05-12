@@ -76,7 +76,10 @@ graficas.py: Funciones para generar visualizaciones
 
 ![Figure_1](https://github.com/user-attachments/assets/62342886-fcd1-4efc-aa3b-946955cca341)
 
-Conclusiones
+----------------------------------------------------------------------------------------------
+
+Conclusiones 📊
+
 El análisis de los algoritmos de ordenamiento implementados muestra claras diferencias en su rendimiento:
 
 Shell Sort es notablemente superior, completando el ordenamiento de 100,000 elementos en menos de 1 segundo, demostrando la eficiencia de su complejidad O(n log² n).
