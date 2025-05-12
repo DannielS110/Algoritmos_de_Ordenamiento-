@@ -15,11 +15,13 @@ class Benchmarking:
         fin = time.perf_counter()
         return fin - inicio
 
-    def build_arreglo(self, tamano, semilla = 42):
-       random.seed(semilla) 
-       return [random.randint(0, 999999) for _ in range(tamano)]
-       random.sedd()
-       return arreglo
+    def build_arreglo(self, tamano, semilla=42):
+     random.seed(semilla)
+     arreglo = [random.randint(0, 999999) for _ in range(tamano)]
+    
+     random.seed()
+    
+     return arreglo
     
     def contar_con_current_time_milles(self, tarea):
         x = time.time()

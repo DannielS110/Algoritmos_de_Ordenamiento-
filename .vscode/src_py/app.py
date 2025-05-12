@@ -3,10 +3,11 @@ import metodos_ordenamiento as mo
 import matplotlib.pyplot as plt
 import copy
 import datetime
+
 if __name__ == "__main__":
     bench = bm.Benchmarking()
     metodos = mo.MetodoOrdenamiento()
-
+    
     tamanos = [5000, 10000, 30000, 50000, 100000]
     resultados = []
     
@@ -17,6 +18,7 @@ if __name__ == "__main__":
         "insercion": metodos.sort_insercion,
         "shell": metodos.sort_shell
     }
+    
     arreglo_base_grande = bench.build_arreglo(max(tamanos))
     for tam in tamanos:
         print(f"\n--- Ejecutando para tamaño {tam} ---")
@@ -25,7 +27,8 @@ if __name__ == "__main__":
             print(f"Ejecutando {nombre}...")
             tiempo_resultado = bench.medir_tiempo(metodo, arreglo_base)
             resultados.append((tam, nombre, tiempo_resultado))
-    for tam,nombre,tiempo in resultados:
+    
+    for tam, nombre, tiempo in resultados:
         print(f"Tamano: {tam}, Metodo: {nombre}, Tiempo: {tiempo:.6f} segundos")
 
     tiempos_by_metodo = {nombre: [] for nombre in metodos_dic}
@@ -47,14 +50,20 @@ if __name__ == "__main__":
     ax1.grid(True)
     ax1.legend()
 
-    eje_x = [1, 2, 3, 4, 5]
-    eje_y = [2, 4, 6, 8, 10]
-    ax2.plot(eje_x, eje_y, label="Línea 1")
-    ax2.set_title("Gráfico de Ejemplo con Matplotlib")
-    ax2.set_xlabel("Eje X")
-    ax2.set_ylabel("Eje Y")
+    
+    for nombre, datos in tiempos_by_metodo.items():
+        x = [tam for tam, _ in datos]
+        y = [tiempo for _, tiempo in datos]
+        ax2.plot(x, y, label=nombre, marker='o')
+    
+    ax2.set_title("Comparación de algoritmos de ordenamiento")
+    ax2.set_xlabel("Tamaño del arreglo")
+    ax2.set_ylabel("Tiempo de ejecución (segundos)")
     ax2.grid(True)
     ax2.legend()
 
     plt.tight_layout(rect=[0, 0, 1, 0.95])
+    plt.savefig("figura_comparativa.png", dpi=300)
     plt.show()
+
+
