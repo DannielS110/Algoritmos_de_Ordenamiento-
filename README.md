@@ -4,9 +4,12 @@ Información General
 
 Integrantes:
 
-Daniel Sanchez
+Daniel Sanchez (DannielS110)    ![image](https://github.com/user-attachments/assets/ad8f5e09-5867-431e-9560-4dcf929f34a0)
 
-Joey Diaz
+
+
+Joey Diaz (LASERX22)          ![image](https://github.com/user-attachments/assets/152285df-e4ce-440f-b527-0e3b9ff8d5ba)
+
 
 
 Docente: Ing. Pablo Torres
