@@ -76,6 +76,19 @@ graficas.py: Funciones para generar visualizaciones
 
 ![Figure_1](https://github.com/user-attachments/assets/62342886-fcd1-4efc-aa3b-946955cca341)
 
+Conclusiones
+El análisis de los algoritmos de ordenamiento implementados muestra claras diferencias en su rendimiento:
 
+Shell Sort es notablemente superior, completando el ordenamiento de 100,000 elementos en menos de 1 segundo, demostrando la eficiencia de su complejidad O(n log² n).
+
+Los algoritmos con complejidad O(n²) (Burbuja, Burbuja Mejorado, Selección e Inserción) muestran un deterioro drástico del rendimiento a medida que aumenta el tamaño del arreglo, llegando a tardar más de 6 
+
+minutos en los casos más lentos.
+
+La diferencia de rendimiento es más pronunciada en arreglos grandes, donde Shell es aproximadamente 380 veces más rápido que los algoritmos de burbuja.
+
+Estos resultados confirman la importancia de elegir algoritmos eficientes, especialmente cuando se trabaja con grandes cantidades de datos.
+
+Esta práctica demuestra empíricamente por qué el análisis de complejidad algorítmica es fundamental en el desarrollo de software eficiente.
 
 
