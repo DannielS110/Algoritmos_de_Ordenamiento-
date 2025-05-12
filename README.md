@@ -4,11 +4,15 @@ Información General
 
 Integrantes:
 
-Daniel Sanchez (DannielS110)    ![image](https://github.com/user-attachments/assets/ad8f5e09-5867-431e-9560-4dcf929f34a0)
+Daniel Sanchez (DannielS110)    
+
+![image](https://github.com/user-attachments/assets/ad8f5e09-5867-431e-9560-4dcf929f34a0)
 
 
 
-Joey Diaz (LASERX22)          ![image](https://github.com/user-attachments/assets/152285df-e4ce-440f-b527-0e3b9ff8d5ba)
+Joey Diaz (LASERX22)         
+
+![image](https://github.com/user-attachments/assets/152285df-e4ce-440f-b527-0e3b9ff8d5ba)
 
 
 
@@ -63,12 +67,15 @@ graficas.py: Funciones para generar visualizaciones
 
 ![image](https://github.com/user-attachments/assets/0f300290-95ee-4256-86fd-3092f0c871bf)
 
+![code (1)](https://github.com/user-attachments/assets/e80b97f0-3433-4cc2-bfd1-2522899ee248)
+
 ----------------------------------------------------------------------------------------------
 
 
 📈 Gráfica Comparativa
 
 
+![Figure_1](https://github.com/user-attachments/assets/62342886-fcd1-4efc-aa3b-946955cca341)
 
 
 
